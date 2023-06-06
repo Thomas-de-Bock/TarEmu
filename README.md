@@ -1,4 +1,4 @@
- # Tar
+ # TarEmu
  An Atari2600 Emulator written in C++
  
  # Usage
