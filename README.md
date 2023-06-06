@@ -18,6 +18,7 @@
  - `ignoreRegisters`, does not check for mismatches in the processor registers.
  - `ignoreMemory`, does not check for mismatches in memory.
  - `noBCD`, skips all ADC and SBC tests where decimal mode is enabled.
+
 Example use: `./Tar.exe --jsonTest 0xFD 500 -ignoreCycles -ignoreMemory`
  
  # Building
