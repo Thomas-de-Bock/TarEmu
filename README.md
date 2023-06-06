@@ -8,6 +8,7 @@
  - `rom` followed by the ROM path.
  - `noCrop`, displays the usually cropped out virtual VBLANK, HBLANK and VSYNC "sections".
  - `dump`, dumps the memory and CPU state after every instruction. Used to compare states for debugging purposes.
+ 
  Example use: `./Tar.exe -dump -rom C:/path/to/rom -noCrop`
  ## Debug use
  The Tar emulator implements Tom Harte's 6502 Json instruction test (https://github.com/TomHarte/ProcessorTests/tree/main/6502), which can be accessed with the `--jsonTest` flag.
