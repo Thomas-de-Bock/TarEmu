@@ -41,7 +41,7 @@ void tickAudio() {
 }
 
 void updateNoises(bool forced) {
-	std::string noisePath = appPath + "/noises/0.wav";
+	std::string noisePath = appPath + "noises/0.wav";
 	if (currentNoise0 != MEM[0x15] || forced) {
 		//noisePath += std::to_string(MEM[0x15]);
 		audioBuffer0->loadFromFile(noisePath);

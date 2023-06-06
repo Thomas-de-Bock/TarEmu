@@ -82,7 +82,7 @@ void doBufferedTIA() {
 
 void initHMOVE() {
 	// Relies on the fact that HM.table has a space at the end
-	std::ifstream t(appPath + "/tables/HM.table");
+	std::ifstream t(appPath + "tables/HM.table");
 	std::stringstream buffer;
 	buffer << t.rdbuf();
 	std::string HMOVEoffsetStr = buffer.str();

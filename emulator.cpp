@@ -169,6 +169,10 @@ int main(int argc, char** argv) {
         }
     }
 
+    // We do not talk about this
+    appPath = std::string(argv[0]);
+    appPath = appPath.substr(0, appPath.size() - 7);
+
     if (isTest) {
         MEM = (uint8_t*)malloc(sizeof(uint8_t) * 0x10000);
         memset(MEM, 0, sizeof(uint8_t) * 0x10000);
@@ -180,9 +184,6 @@ int main(int argc, char** argv) {
             ROMpath = argv[1];
         }
 
-        // We do not talk about this
-        appPath = std::string(argv[0]);
-        appPath = appPath.substr(0, appPath.size() - 7);
         MEM = (uint8_t*)malloc(sizeof(uint8_t) * 0x2000);
         memset(MEM, 0, sizeof(uint8_t) * 0x2000);
 

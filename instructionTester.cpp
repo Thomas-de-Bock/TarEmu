@@ -106,7 +106,7 @@ int doTest(int ROMindex, int testIndex) {
 }
 
 void loadTestROM(int ROMindex) {
-    std::ifstream t("C:/Users/thoma/Documents/Coding/Atari2600/testROMS/" + getHex((uint8_t)ROMindex) + ".json");
+    std::ifstream t(appPath + "tests/" + getHex((uint8_t)ROMindex) + ".json");
     std::stringstream buffer;
     buffer << t.rdbuf();
     std::string ROMtxt = buffer.str();
