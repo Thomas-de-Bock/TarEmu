@@ -18,6 +18,8 @@
  - `ignoreRegisters`, does not check for mismatches in the processor registers.
  - `ignoreMemory`, does not check for mismatches in memory.
  - `noBCD`, skips all ADC and SBC tests where decimal mode is enabled.
+ - `0xAA`, hex values with the `0x` prefix can be used to specify opcodes to test.
+ - `x`, non-hex numbers can be used to specify the amount of tests to perform per instruction.
 
 Example use: `./Tar.exe --jsonTest 0xFD 500 -ignoreCycles -ignoreMemory`
  
