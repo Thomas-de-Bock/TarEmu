@@ -10,6 +10,7 @@
  - `dump`, dumps the memory and CPU state after every instruction. Used to compare states for debugging purposes.
  
  Example use: `./Tar.exe -dump -rom "C:/path/to/rom" -noCrop`
+ 
  Tar is currently not available for any platforms but windows.
  ## Debug use
  The Tar emulator implements Tom Harte's 6502 Json instruction test (https://github.com/TomHarte/ProcessorTests/tree/main/6502), which can be accessed with the `--jsonTest` flag.
