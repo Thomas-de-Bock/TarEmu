@@ -1,5 +1,5 @@
  # TarEmu
- An Atari2600 Emulator written in C++
+ Emulator for the Atari 2600 VCS written in C++.
  
  # Usage
  ## Normal Use
@@ -9,7 +9,8 @@
  - `noCrop`, displays the usually cropped out virtual VBLANK, HBLANK and VSYNC "sections".
  - `dump`, dumps the memory and CPU state after every instruction. Used to compare states for debugging purposes.
  
- Example use: `./Tar.exe -dump -rom C:/path/to/rom -noCrop`
+ Example use: `./Tar.exe -dump -rom "C:/path/to/rom" -noCrop`
+ Tar is currently not available for any platforms but windows.
  ## Debug use
  The Tar emulator implements Tom Harte's 6502 Json instruction test (https://github.com/TomHarte/ProcessorTests/tree/main/6502), which can be accessed with the `--jsonTest` flag.
  Other switches and options include:
@@ -38,3 +39,4 @@ Note that, after testing all specifed instructions, it generates a report of the
  - As there is no implementation of the polynomial counters, the `HM` offsets use measurements by Brad done for the Player graphics (https://www.biglist.com/lists/stella/archives/199804/msg00198.html), I am not sure about the reliability of these measurements, but they gave good results on implementation. Though obviously, An actual implementation of the polynomial position counters would be more preferable.
  - The way the TIA and 6507 work in sync with eachother in Tar, is that the 6507 performs the instruction and measures the amount of cycles throughout the instruction. After this the TIA catches up by that amount multiplied by 3. This is not true to hardware, which is why reads and writes to `GRPx` and the `RESxx` strobes are delayed accordingly, where precise timing is crucial, but ONLY these addresses. This shouldn't have a big (or any) impact on most games but it could affect the HMOVE behaviour where small deviations in cycle times can also play a factor.
  - The weird positional behaviour in Frogger implies some incorrect behaviour of the INTIM value and thus the timer.
+ - Although implemented, there are still some cycle inaccuracies on conditional jumps when crossing page boundaries.
