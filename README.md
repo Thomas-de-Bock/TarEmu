@@ -2,6 +2,7 @@
  Emulator for the Atari 2600 VCS written in C++.
  
  # Usage
+  Tar is currently not available for any platforms but windows.
  ## Normal Use
  Tar.exe can be run from the command-line with the ROM path as argument.
  Other switches and options include:
@@ -11,7 +12,6 @@
  
  Example use: `./Tar.exe -dump -rom "C:/path/to/rom" -noCrop`
  
- Tar is currently not available for any platforms but windows.
  ## Debug use
  The Tar emulator implements Tom Harte's 6502 Json instruction test (https://github.com/TomHarte/ProcessorTests/tree/main/6502), which can be accessed with the `--jsonTest` flag.
  Other switches and options include:
