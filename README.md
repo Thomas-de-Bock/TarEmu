@@ -32,6 +32,18 @@ Note that, after testing all specifed instructions, it generates a report of the
  After building, the `tables` and `noises` folders have to be moved into the build folder, along with the SFML dll's. 
  The `tests` folder can also be put in the same directory if you plan on using the CPU instruction tester. The Json test files are not included, they can be downloaded and placed directly into the `tests` folder from: https://github.com/TomHarte/ProcessorTests/tree/main/6502/v1
  
+ 
+
+ # Known issues
+ - There are no non-standard bankswitching methods currently implemented, this means that any cartridge with any bankswitching method implemented other than F8 and F6 will most likely not work.
+ - Frequencies, although mostly accurate, sound a bit off and are an octave lower. This was the closest I managed to implement the frequencies while still having the higher notes be bearable.
+ - The values stored in the AUDCx have no impact on the noise used, there is currently no noise contained in the `noises` folder besides the square wave.
+ - ADC and SBC are not fully functional in decimal mode and mismatch the A register about 1/10 times on Tom Harte's instruction test. This has effects on the score and time counters in quite a few games I tried but not much else, it is practically the only use case.
+ - As there is no implementation of the polynomial counters, the `HM` offsets use measurements by Brad done for the Player graphics (https://www.biglist.com/lists/stella/archives/199804/msg00198.html), I am not sure about the reliability of these measurements, but they gave good results on implementation. Though obviously, An actual implementation of the polynomial position counters would be more preferable.
+ - The way the TIA and 6507 work in sync with eachother in Tar, is that the 6507 performs the instruction and measures the amount of cycles throughout the instruction. After this the TIA catches up by that amount multiplied by 3. This is not true to hardware, which is why reads and writes to `GRPx` and the `RESxx` strobes are delayed accordingly, where precise timing is crucial, but ONLY these addresses. This shouldn't have a big (or any) impact on most games but it could affect the HMOVE behaviour where small deviations in cycle times can also play a factor.
+ - The weird positional behaviour in Frogger implies some incorrect behaviour of the INTIM value and thus the timer.
+ - Although implemented, there are still some cycle inaccuracies on conditional jumps when crossing page boundaries.
+ 
  # Compatability
  Game cartridges implementing bankswitching methods other than F8 or F6 will not work. Same goes for games with any controller other than the joystick.
  This list only mentions some of the ROMS I tried. I appreciate any other compatibility reviews added to this list (granted they use the standard bankswitching methods and joystick).
@@ -59,16 +71,3 @@ Note that, after testing all specifed instructions, it generates a report of the
  ## Jr. Pac-Man
  Works almost perfectly, the only bug I found is the walls being drawn incorrectly in some places.
  ![image](https://github.com/Thomas-de-Bock/TarEmu/assets/78592830/30f498f8-d9a0-462c-9b74-d1b38bc79598)
-
- 
-
-
- # Known issues
- - There are no non-standard bankswitching methods currently implemented, this means that any cartridge with any bankswitching method implemented other than F8 and F6 will most likely not work.
- - Frequencies, although mostly accurate, sound a bit off and are an octave lower. This was the closest I managed to implement the frequencies while still having the higher notes be bearable.
- - The values stored in the AUDCx have no impact on the noise used, there is currently no noise contained in the `noises` folder besides the square wave.
- - ADC and SBC are not fully functional in decimal mode and mismatch the A register about 1/10 times on Tom Harte's instruction test. This has effects on the score and time counters in quite a few games I tried but not much else, it is practically the only use case.
- - As there is no implementation of the polynomial counters, the `HM` offsets use measurements by Brad done for the Player graphics (https://www.biglist.com/lists/stella/archives/199804/msg00198.html), I am not sure about the reliability of these measurements, but they gave good results on implementation. Though obviously, An actual implementation of the polynomial position counters would be more preferable.
- - The way the TIA and 6507 work in sync with eachother in Tar, is that the 6507 performs the instruction and measures the amount of cycles throughout the instruction. After this the TIA catches up by that amount multiplied by 3. This is not true to hardware, which is why reads and writes to `GRPx` and the `RESxx` strobes are delayed accordingly, where precise timing is crucial, but ONLY these addresses. This shouldn't have a big (or any) impact on most games but it could affect the HMOVE behaviour where small deviations in cycle times can also play a factor.
- - The weird positional behaviour in Frogger implies some incorrect behaviour of the INTIM value and thus the timer.
- - Although implemented, there are still some cycle inaccuracies on conditional jumps when crossing page boundaries.
