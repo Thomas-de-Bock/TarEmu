@@ -28,7 +28,7 @@ Example use: `./Tar.exe --jsonTest 0xFD 500 -ignoreCycles -ignoreMemory`
 Note that, after testing all specifed instructions, it generates a report of the performance of different addressing modes. This proved useful in early development.
  
  # Building
- Tar can be built in Visual Studio 2019 or later. It is recomended to build in Release mode no matter what as the SFML debug dll's are not included anyway.
+ Tar can be built in Visual Studio 2022. It is recomended to build in Release mode no matter what as the SFML debug dll's are not included anyway.
  After building, the `tables` and `noises` folders have to be moved into the build folder, along with the SFML dll's. 
  The `tests` folder can also be put in the same directory if you plan on using the CPU instruction tester. The Json test files are not included, they can be downloaded and placed directly into the `tests` folder from: https://github.com/TomHarte/ProcessorTests/tree/main/6502/v1
  
