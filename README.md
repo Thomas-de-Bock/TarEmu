@@ -65,7 +65,7 @@ Note that, after testing all specifed instructions, it generates a report of the
 
  # Known issues
  - There are no non-standard bankswitching methods currently implemented, this means that any cartridge with any bankswitching method implemented other than F8 and F6 will most likely not work.
- - Frequencies, although mostly accurate, sound a bit off and are an octave lower. This was the closest I managed to imeplement the frequencies while still having the higher notes be bearable.
+ - Frequencies, although mostly accurate, sound a bit off and are an octave lower. This was the closest I managed to implement the frequencies while still having the higher notes be bearable.
  - The values stored in the AUDCx have no impact on the noise used, there is currently no noise contained in the `noises` folder besides the square wave.
  - ADC and SBC are not fully functional in decimal mode and mismatch the A register about 1/10 times on Tom Harte's instruction test. This has effects on the score and time counters in quite a few games I tried but not much else, it is practically the only use case.
  - As there is no implementation of the polynomial counters, the `HM` offsets use measurements by Brad done for the Player graphics (https://www.biglist.com/lists/stella/archives/199804/msg00198.html), I am not sure about the reliability of these measurements, but they gave good results on implementation. Though obviously, An actual implementation of the polynomial position counters would be more preferable.
