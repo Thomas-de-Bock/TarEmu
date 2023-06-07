@@ -34,7 +34,7 @@ Note that, after testing all specifed instructions, it generates a report of the
  
  # Compatability
  No game cartridges implementing bankswitching methods other than F8 or F6 will not work. Same goes for games with any controller other than the joystick.
- This list only mentions some of the ROMS I tried. I appreciate any other compatibility reviews added to this list (granted they use the standard bankswitching methods).
+ This list only mentions some of the ROMS I tried. I appreciate any other compatibility reviews added to this list (granted they use the standard bankswitching methods and joystick).
  
  ## Pitfall
  Works pretty well and is completely playable, the only bugs I noticed is the timer starting minutes at 100 seconds instead of 60 and not decrementing the minute timer. That and the logs dissapearing off screen a little bit earlier than they should. Recomended playing with audio off because of the obnoxious beeping noise (see known issues).
