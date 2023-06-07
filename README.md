@@ -33,7 +33,7 @@ Note that, after testing all specifed instructions, it generates a report of the
  The `tests` folder can also be put in the same directory if you plan on using the CPU instruction tester. The Json test files are not included, they can be downloaded and placed directly into the `tests` folder from: https://github.com/TomHarte/ProcessorTests/tree/main/6502/v1
  
  # Compatability
- No game cartridges implementing bankswitching methods other than F8 or F6 will not work. Same goes for games with any controller other than the joystick.
+ Game cartridges implementing bankswitching methods other than F8 or F6 will not work. Same goes for games with any controller other than the joystick.
  This list only mentions some of the ROMS I tried. I appreciate any other compatibility reviews added to this list (granted they use the standard bankswitching methods and joystick).
  
  ## Pitfall
