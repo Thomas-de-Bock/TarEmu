@@ -37,15 +37,18 @@ Note that, after testing all specifed instructions, it generates a report of the
  This list only mentions some of the ROMS I tried.
  
  ## Pitfall
- Works decently and is completely playable, the only bugs I noticed is the timer starting minutes at 100 seconds instead of 60. That and the logs dissapearing off screen a little bit earlier than they should. Recomended playing with audio off because of the obnoxious beeping noise (see known issues).
+ Works decently and is completely playable, the only bugs I noticed is the timer starting minutes at 100 seconds instead of 60 and not decrementing the minute timer. That and the logs dissapearing off screen a little bit earlier than they should. Recomended playing with audio off because of the obnoxious beeping noise (see known issues).
+ 
  ![image](https://github.com/Thomas-de-Bock/TarEmu/assets/78592830/57d241ad-a43f-4e88-a968-ad6382a6521a)
  
  ## Donkey Kong
  Works very well and is completely playable, though the Pauline and Hammer sprites to jitter left and right at times. Audio matches the game very well.
+ 
  ![image](https://github.com/Thomas-de-Bock/TarEmu/assets/78592830/ed1c2cbd-b2f7-406f-ab8a-04bddb9d917f)
  
  ## Midnight Magic
  Works almost perfectly, the only bug I noticed is some weird purple artifacts left of the board. Audio matches the game very well.
+ 
  ![image](https://github.com/Thomas-de-Bock/TarEmu/assets/78592830/f5e50508-c6b1-43f0-903b-495c82beff6d)
 
 
