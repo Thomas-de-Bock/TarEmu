@@ -32,6 +32,24 @@ Note that, after testing all specifed instructions, it generates a report of the
  After building, the `tables` and `noises` folders have to be moved into the build folder, along with the SFML dll's. 
  The `tests` folder can also be put in the same directory if you plan on using the CPU instruction tester. The Json test files are not included, they can be downloaded and placed directly into the `tests` folder from: https://github.com/TomHarte/ProcessorTests/tree/main/6502/v1
  
+ # Compatability
+ No game cartridges implementing bankswitching methods other than F8 or F6 will not work.
+ This list only mentions some of the ROMS I tried.
+ 
+ ## Pitfall
+ Works decently and is completely playable, the only bugs I noticed is the timer starting minutes at 100 seconds instead of 60. That and the logs dissapearing off screen a little bit earlier than they should. Recomended playing with audio off because of the obnoxious beeping noise (see known issues).
+ ![image](https://github.com/Thomas-de-Bock/TarEmu/assets/78592830/57d241ad-a43f-4e88-a968-ad6382a6521a)
+ 
+ ## Donkey Kong
+ Works very well and is completely playable, though the Pauline and Hammer sprites to jitter left and right at times. Audio matches the game very well.
+ ![image](https://github.com/Thomas-de-Bock/TarEmu/assets/78592830/ed1c2cbd-b2f7-406f-ab8a-04bddb9d917f)
+ 
+ ## Midnight Magic
+ Works almost perfectly, the only bug I noticed is some weird purple artifacts left of the board. Audio matches the game very well.
+ ![image](https://github.com/Thomas-de-Bock/TarEmu/assets/78592830/f5e50508-c6b1-43f0-903b-495c82beff6d)
+
+
+
  # Known issues
  - There are no non-standard bankswitching methods currently implemented, this means that any cartridge with any bankswitching method implemented other than F8 and F6 will most likely not work.
  - Frequencies, although mostly accurate, sound a bit off and are an octave lower. This was the closest I managed to imeplement the frequencies while still having the higher notes be bearable.
