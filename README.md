@@ -34,7 +34,7 @@ Note that, after testing all specifed instructions, it generates a report of the
  
  # Compatability
  No game cartridges implementing bankswitching methods other than F8 or F6 will not work.
- This list only mentions some of the ROMS I tried.
+ This list only mentions some of the ROMS I tried. I appreciate any other compatibility reviews added to this list (granted they use the standard bankswitching methods).
  
  ## Pitfall
  Works pretty well and is completely playable, the only bugs I noticed is the timer starting minutes at 100 seconds instead of 60 and not decrementing the minute timer. That and the logs dissapearing off screen a little bit earlier than they should. Recomended playing with audio off because of the obnoxious beeping noise (see known issues).
@@ -42,15 +42,25 @@ Note that, after testing all specifed instructions, it generates a report of the
  ![image](https://github.com/Thomas-de-Bock/TarEmu/assets/78592830/c08679ea-dd76-4d79-84db-9129ed94c3e2)
  
  ## Donkey Kong
- Works very well and is completely playable, though the Pauline and Hammer sprites to jitter left and right at times. Audio matches the game very well.
+ Works very well and is completely playable, though the Pauline and Hammer sprites jitter left and right at times. Audio matches the game very well.
  
  ![image](https://github.com/Thomas-de-Bock/TarEmu/assets/78592830/ed1c2cbd-b2f7-406f-ab8a-04bddb9d917f)
  
  ## Midnight Magic
- Works almost perfectly, the only bug I noticed is some weird purple artifacts left of the board. Audio matches the game very well.
+ Works almost perfectly, the only bug I noticed is some weird purple artifacts on and outside the board. Audio matches the game very well.
  
  ![image](https://github.com/Thomas-de-Bock/TarEmu/assets/78592830/f5e50508-c6b1-43f0-903b-495c82beff6d)
 
+ ## Frogger
+ Works okay, because of INTIM timer issues (see known issues), the positioning of the sprites on the road tends to be a bit buggy.
+ 
+ ![image](https://github.com/Thomas-de-Bock/TarEmu/assets/78592830/ff64e398-083f-42f1-a28f-a2bc97d3cd3a)
+
+ ## Jr. Pac-Man
+ Works almost perfectly, the only bug I found is the walls being drawn incorrectly in some places.
+ ![image](https://github.com/Thomas-de-Bock/TarEmu/assets/78592830/30f498f8-d9a0-462c-9b74-d1b38bc79598)
+
+ 
 
 
  # Known issues
