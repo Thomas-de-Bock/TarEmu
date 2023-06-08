@@ -44,6 +44,16 @@ Note that, after testing all specifed instructions, it generates a report of the
  - The weird positional behaviour in Frogger implies some incorrect behaviour of the INTIM value and thus the timer.
  - Although implemented, there are still some cycle inaccuracies on conditional jumps when crossing page boundaries.
  
+ # Credit
+ I would like to thank:
+
+ - gloriouscow
+ - Bigbass
+ - Thief
+ - leina
+
+for answering my questions, linking resources and helping with tracking down bugs.
+ 
  # Compatibility
  Game cartridges implementing bankswitching methods other than F8 or F6 will not work. Same goes for games with any controller other than the joystick.
  This list only mentions some of the ROMS I tried. I appreciate any other compatibility reviews added to this list (granted they use the standard bankswitching methods and joystick).
