@@ -320,7 +320,7 @@ void OP_SBC() {
             }
         }
         A = (uint8_t)res;
-        P = P | (A & 0b10000000);                                       // Sign flag
+        P = P | (((res < -127) | (res > 128)) ? 0b10000000 : 0);        // Sign flag
         P = P | (A == 0 ? 0b00000010 : 0);                              // Zero flag
     }
     

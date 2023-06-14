@@ -43,21 +43,16 @@ int doTest(int ROMindex, int testIndex) {
     bool passed = true;
     if (Pin16To13(PC) != Pin16To13(testROMS[ROMindex][testIndex]["final"]["pc"].int_value()) && Pin16To13(PC-1) != Pin16To13(testROMS[ROMindex][testIndex]["final"]["pc"].int_value())) {
         currentREGfails[0]++;
-        //std::cout << "test" << testIndex << " is: (" << (int)oldPC << "->" << (int)PC << ") should be: (" << testROMS[ROMindex][testIndex]["initial"]["pc"].int_value() << "->" << testROMS[ROMindex][testIndex]["final"]["pc"].int_value() << ")" << std::endl;
         int testS = S;
 
         passed = false;
     }
     if (S != testROMS[ROMindex][testIndex]["final"]["s"].int_value() && !testIgnoreRegisters) {
         currentREGfails[1]++;
-        //std::cout << "test" << testIndex << " S is: (" << (int)oldS << "->" << (int)S << ") should be: (" << testROMS[ROMindex][testIndex]["initial"]["s"].int_value() << "->" << testROMS[ROMindex][testIndex]["final"]["s"].int_value() << ")" << std::endl;
-
-
         passed = false;
     }
     if (A != testROMS[ROMindex][testIndex]["final"]["a"].int_value() && !testIgnoreRegisters) {
         currentREGfails[2]++;
-        //std::cout << "test" << testIndex << " is: (" << (int)oldA << "->" << (int)A << ") should be: (" << testROMS[ROMindex][testIndex]["initial"]["a"].int_value() << "->" << testROMS[ROMindex][testIndex]["final"]["a"].int_value() << ")" << std::endl;
         passed = false;
     }
     if (X != testROMS[ROMindex][testIndex]["final"]["x"].int_value() && !testIgnoreRegisters) {
@@ -70,14 +65,10 @@ int doTest(int ROMindex, int testIndex) {
     }
     if (P != testROMS[ROMindex][testIndex]["final"]["p"].int_value() && !testIgnoreStatus) {
         currentREGfails[5]++;
-        //std::cout << "test" << testIndex << " is: (" << (int)oldP << "->" << (int)P << ") should be: (" << testROMS[ROMindex][testIndex]["initial"]["p"].int_value() << "->" << testROMS[ROMindex][testIndex]["final"]["p"].int_value() << ")" << std::endl;
-
         passed = false;
     }
-    //std::cout << "ignorecycle: " << (int)testIgnoreCycles << " yep." << std::endl;
     if (cycles != testROMS[ROMindex][testIndex]["cycles"].array_items().size() && !testIgnoreCycles) { //testignore cycles var completely broken
         currentREGfails[6]++;
-        //std::cout << "test" << testIndex << " should be : " << testROMS[ROMindex][testIndex]["cycles"].array_items().size() << " but is: " << cycles << std::endl;
         passed = false;
     }
     if (!testIgnoreMemory) {
